@@ -5,6 +5,7 @@ from PyQt5.QtWidgets import QHBoxLayout, QWidget, QVBoxLayout, QPushButton, QLab
 from Frontend.ButtonUI import ButtonUI
 from Frontend.GlobalStyle import GlobalStyle
 from Rough_Set_Analysis.rough_set_analysis import ReductFinderApp
+from frequent_set.frequent_set import FrequentSetGUI
 
 
 class LandlordMenu(QWidget):
@@ -51,51 +52,56 @@ class LandlordMenu(QWidget):
         # Tạo nút và áp dụng style\
         button_ui = ButtonUI.landlord_dashboard_button()
 
-        self.home_btn = QPushButton("Giới thiệu")
-        button_ui.apply_style(self.home_btn)
-        self.home_btn.clicked.connect(lambda: print("Ở đây giới thiệu về ứng dụng và báo cáo"))
+        self.introduction = QPushButton("Giới thiệu")
+        button_ui.apply_style(self.introduction)
+        self.introduction.clicked.connect(lambda: print("Ở đây giới thiệu về ứng dụng và báo cáo"))
 
-        self.info_btn = QPushButton("Thuật toán rút gọn - Reduct")
-        button_ui.apply_style(self.info_btn)
-        self.info_btn.clicked.connect(lambda: self.set_right_frame(ReductFinderApp))
+        self.frequent = QPushButton("TTapajj phổ biến và luật kết hợp")
+        button_ui.apply_style(self.frequent)
+        self.frequent.clicked.connect(lambda: self.set_right_frame(FrequentSetGUI))
 
-        self.infor_list_room_btn = QPushButton("Phân lớp bằng Naïve Bayes")
-        button_ui.apply_style(self.infor_list_room_btn)
-        self.infor_list_room_btn.clicked.connect(lambda : print("3"))
+        self.reduct = QPushButton("Thuật toán rút gọn - Reduct")
+        button_ui.apply_style(self.reduct)
+        self.reduct.clicked.connect(lambda: self.set_right_frame(ReductFinderApp))
 
-        self.create_new_room_btn = QPushButton("Phân lớp bằng Cây quyết định")
-        button_ui.apply_style(self.create_new_room_btn)
-        self.create_new_room_btn.clicked.connect(lambda : print("3"))
+        self.bayes = QPushButton("Phân lớp bằng Naïve Bayes")
+        button_ui.apply_style(self.bayes)
+        self.bayes.clicked.connect(lambda: print("Thuajat toan Bayes"))
 
-        self.infor_list_invoice_btn = QPushButton("Gom cụm - Clustering")
-        button_ui.apply_style(self.infor_list_invoice_btn)
-        self.infor_list_invoice_btn.clicked.connect(lambda : print("4"))
+        self.decision_tree = QPushButton("Phân lớp bằng Cây quyết định")
+        button_ui.apply_style(self.decision_tree)
+        self.decision_tree.clicked.connect(lambda : print("3"))
 
-        self.add_adv_find_tenant_btn = QPushButton("K-means")
-        button_ui.apply_style(self.add_adv_find_tenant_btn)
-        self.add_adv_find_tenant_btn.clicked.connect(lambda : print("5"))
+        self.clustering = QPushButton("Gom cụm - Clustering")
+        button_ui.apply_style(self.clustering)
+        self.clustering.clicked.connect(lambda : print("4"))
 
-        self.add_list_maintenance_btn = QPushButton("Minkowski - Euclidean ")
-        button_ui.apply_style(self.add_list_maintenance_btn)
-        self.add_list_maintenance_btn.clicked.connect(lambda : print("6"))
+        self.k_means = QPushButton("K-means")
+        button_ui.apply_style(self.k_means)
+        self.k_means.clicked.connect(lambda : print("5"))
 
-        self.logout_btn = QPushButton("Manhattan distance")
-        button_ui.apply_style(self.logout_btn)
-        self.logout_btn.clicked.connect(lambda : print("7"))
+        self.minkoski_euclidean = QPushButton("Minkowski - Euclidean ")
+        button_ui.apply_style(self.minkoski_euclidean)
+        self.minkoski_euclidean.clicked.connect(lambda : print("6"))
+
+        self.manhattan_distance = QPushButton("Manhattan distance")
+        button_ui.apply_style(self.manhattan_distance)
+        self.manhattan_distance.clicked.connect(lambda : print("7"))
 
         self.exist_btn = QPushButton("❌ Thoát")
         button_ui.apply_style(self.exist_btn)
         self.exist_btn.clicked.connect(lambda: self.close_window_menu())
 
         # Thêm tất cả các button vào layout
-        left_layout.addWidget(self.home_btn)
-        left_layout.addWidget(self.info_btn)
-        left_layout.addWidget(self.infor_list_room_btn)
-        left_layout.addWidget(self.create_new_room_btn)
-        left_layout.addWidget(self.add_list_maintenance_btn)
-        left_layout.addWidget(self.infor_list_invoice_btn)
-        left_layout.addWidget(self.add_adv_find_tenant_btn)
-        left_layout.addWidget(self.logout_btn)
+        left_layout.addWidget(self.introduction)
+        left_layout.addWidget(self.frequent)
+        left_layout.addWidget(self.reduct)
+        left_layout.addWidget(self.bayes)
+        left_layout.addWidget(self.decision_tree)
+        left_layout.addWidget(self.clustering)
+        left_layout.addWidget(self.k_means)
+        left_layout.addWidget(self.minkoski_euclidean)
+        left_layout.addWidget(self.manhattan_distance)
         left_layout.addWidget(self.exist_btn)
 
         # ----------- RIGHT FRAME (QStackedWidget) -----------

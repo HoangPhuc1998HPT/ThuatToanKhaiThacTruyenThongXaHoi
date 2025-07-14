@@ -1,7 +1,7 @@
 import sys
 import pandas as pd
-
-from PyQt5 import QtCore,  QtWidgets
+import mlxtend
+from PyQt5 import  QtWidgets
 
 try:
     from mlxtend.preprocessing import TransactionEncoder
