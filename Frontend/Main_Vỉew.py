@@ -19,17 +19,11 @@ class LandlordMenu(QWidget):
 
 
         self.main_window.setWindowTitle("Dashboard Chủ trọ")
-        #self.main_window.setGeometry(300, 100, 1000, 600)
         self.main_window.resize(GlobalStyle.WINDOW_WIDTH, GlobalStyle.WINDOW_HEIGHT)
         self.main_window.setMinimumSize(GlobalStyle.WINDOW_WIDTH, GlobalStyle.WINDOW_HEIGHT)
         self.main_window.setMaximumSize(GlobalStyle.WINDOW_WIDTH, GlobalStyle.WINDOW_HEIGHT)
 
-        #self.main_window.setStyleSheet("""
-            #background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 #FF6B6B, stop:1 #FFA07A);
-           # border-radius: 15px;
-        #""")
         self.main_layout = QHBoxLayout()
-       #self.main_layout.setContentsMargins(0, 0, 0, 0)
 
         # ------------ LEFT MENU FRAME ------------
         self.left_frame = QWidget()
@@ -45,9 +39,6 @@ class LandlordMenu(QWidget):
         # Label chào mừng
         self.label_landlord = QLabel("👋 Chào mừng đến với DASHBOARD Chủ trọ: Nguyễn Văn A")
         self.label_landlord.setObjectName("Title")
-
-        #self.label_landlord.setStyleSheet("color: white; font-weight: bold; padding: 10px;")
-        #left_layout.addWidget(self.label_landlord)
 
         # Tạo nút và áp dụng style\
         button_ui = ButtonUI.landlord_dashboard_button()
@@ -109,16 +100,9 @@ class LandlordMenu(QWidget):
         self.right_layout = QVBoxLayout(self.right_frame)
         self.right_layout.setContentsMargins(0, 0, 0, 0)
 
-
-
         # Thêm vào layout chính
         self.main_layout.addWidget(self.left_frame)
         self.main_layout.addWidget(self.right_frame)
-
-
-
-        # Thành:
-        #LandlordController.go_to_home_page(self, self.id_lanlord)
 
         self.setLayout(self.main_layout)
 
