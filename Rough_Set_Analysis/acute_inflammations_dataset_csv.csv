@@ -1,0 +1,121 @@
+﻿ID;temperature;nausea;lumbar-pain;urine-pushing;micturition-pains;burning-urethra;decision
+O1;35.5;no;yes;no;no;no;none
+O2;35.9;no;no;yes;yes;yes;bladder-inflammation
+O3;35.9;no;yes;no;no;no;none
+O4;36.0;no;no;yes;yes;yes;bladder-inflammation
+O5;36.0;no;yes;no;no;no;none
+O6;36.0;no;yes;no;no;no;none
+O7;36.2;no;no;yes;yes;yes;bladder-inflammation
+O8;36.2;no;yes;no;no;no;none
+O9;36.3;no;no;yes;yes;yes;bladder-inflammation
+O10;36.6;no;no;yes;yes;yes;bladder-inflammation
+O11;36.6;no;no;yes;yes;yes;bladder-inflammation
+O12;36.6;no;yes;no;no;no;none
+O13;36.6;no;yes;no;no;no;none
+O14;36.7;no;no;yes;yes;yes;bladder-inflammation
+O15;36.7;no;yes;no;no;no;none
+O16;36.7;no;yes;no;no;no;none
+O17;36.8;no;no;yes;yes;yes;bladder-inflammation
+O18;36.8;no;no;yes;yes;yes;bladder-inflammation
+O19;36.9;no;no;yes;yes;yes;bladder-inflammation
+O20;36.9;no;yes;no;no;no;none
+O21;37.0;no;no;yes;yes;no;bladder-inflammation
+O22;37.0;no;no;yes;yes;no;bladder-inflammation
+O23;37.0;no;yes;no;no;no;none
+O24;37.0;no;no;yes;yes;yes;bladder-inflammation
+O25;37.0;no;no;yes;yes;yes;bladder-inflammation
+O26;37.0;no;no;yes;yes;yes;bladder-inflammation
+O27;37.0;no;no;yes;yes;yes;bladder-inflammation
+O28;37.0;no;no;yes;no;no;bladder-inflammation
+O29;37.1;no;yes;no;no;no;none
+O30;37.1;no;no;yes;yes;yes;bladder-inflammation
+O31;37.1;no;no;yes;no;no;bladder-inflammation
+O32;37.2;no;no;yes;yes;no;bladder-inflammation
+O33;37.2;no;yes;no;no;no;none
+O34;37.2;no;no;yes;no;no;bladder-inflammation
+O35;37.3;no;yes;no;no;no;none
+O36;37.3;no;no;yes;yes;yes;bladder-inflammation
+O37;37.3;no;no;yes;no;no;bladder-inflammation
+O38;37.4;no;yes;no;no;no;none
+O39;37.4;no;no;yes;no;no;bladder-inflammation
+O40;37.5;no;no;yes;yes;no;bladder-inflammation
+O41;37.5;no;yes;no;no;no;none
+O42;37.5;no;yes;no;no;no;none
+O43;37.5;no;no;yes;yes;yes;bladder-inflammation
+O44;37.5;no;no;yes;no;no;bladder-inflammation
+O45;37.5;no;no;yes;no;no;bladder-inflammation
+O46;37.6;no;no;yes;yes;no;bladder-inflammation
+O47;37.6;no;no;yes;yes;no;bladder-inflammation
+O48;37.6;no;no;yes;yes;yes;bladder-inflammation
+O49;37.7;no;no;yes;yes;no;bladder-inflammation
+O50;37.7;no;no;yes;yes;no;bladder-inflammation
+O51;37.7;no;yes;no;no;no;none
+O52;37.7;no;no;yes;no;no;bladder-inflammation
+O53;37.8;no;yes;no;no;no;none
+O54;37.8;no;no;yes;yes;yes;bladder-inflammation
+O55;37.8;no;no;yes;no;no;bladder-inflammation
+O56;37.9;no;no;yes;yes;no;bladder-inflammation
+O57;37.9;no;no;yes;yes;no;bladder-inflammation
+O58;37.9;no;yes;no;no;no;none
+O59;37.9;no;no;yes;yes;yes;bladder-inflammation
+O60;37.9;no;no;yes;no;no;bladder-inflammation
+O61;38.0;no;yes;yes;no;yes;nephritis
+O62;38.0;no;yes;yes;no;yes;nephritis
+O63;38.1;no;yes;yes;no;yes;nephritis
+O64;38.3;no;yes;yes;no;yes;nephritis
+O65;38.5;no;yes;yes;no;yes;nephritis
+O66;38.7;no;yes;yes;no;yes;nephritis
+O67;38.9;no;yes;yes;no;yes;nephritis
+O68;39.0;no;yes;yes;no;yes;nephritis
+O69;39.4;no;yes;yes;no;yes;nephritis
+O70;39.7;no;yes;yes;no;yes;nephritis
+O71;40.0;yes;yes;yes;yes;yes;bladder-inflammation and nephritis
+O72;40.0;yes;yes;yes;yes;yes;bladder-inflammation and nephritis
+O73;40.0;yes;yes;yes;yes;no;bladder-inflammation and nephritis
+O74;40.0;no;no;no;no;no;none
+O75;40.0;no;no;no;no;no;none
+O76;40.0;yes;yes;no;yes;no;nephritis
+O77;40.0;yes;yes;no;yes;no;nephritis
+O78;40.0;no;yes;yes;no;yes;nephritis
+O79;40.1;yes;yes;yes;yes;no;bladder-inflammation and nephritis
+O80;40.2;yes;yes;yes;yes;yes;bladder-inflammation and nephritis
+O81;40.2;no;no;no;no;no;none
+O82;40.2;yes;yes;no;yes;no;nephritis
+O83;40.3;no;yes;yes;no;yes;nephritis
+O84;40.4;yes;yes;yes;yes;yes;bladder-inflammation and nephritis
+O85;40.4;yes;yes;yes;yes;no;bladder-inflammation and nephritis
+O86;40.4;yes;yes;yes;yes;no;bladder-inflammation and nephritis
+O87;40.4;no;no;no;no;no;none
+O88;40.4;yes;yes;no;yes;no;nephritis
+O89;40.5;yes;yes;yes;yes;no;bladder-inflammation and nephritis
+O90;40.6;yes;yes;yes;yes;yes;bladder-inflammation and nephritis
+O91;40.6;no;no;no;no;no;none
+O92;40.6;yes;yes;no;yes;no;nephritis
+O93;40.7;yes;yes;yes;yes;yes;bladder-inflammation and nephritis
+O94;40.7;yes;yes;yes;yes;no;bladder-inflammation and nephritis
+O95;40.7;no;no;no;no;no;none
+O96;40.7;yes;yes;no;yes;no;nephritis
+O97;40.7;no;yes;yes;no;yes;nephritis
+O98;40.8;no;yes;yes;no;yes;nephritis
+O99;40.9;yes;yes;yes;yes;no;bladder-inflammation and nephritis
+O100;40.9;yes;yes;yes;yes;no;bladder-inflammation and nephritis
+O101;40.9;no;yes;yes;no;yes;nephritis
+O102;41.0;yes;yes;yes;yes;yes;bladder-inflammation and nephritis
+O103;41.0;no;no;no;no;no;none
+O104;41.0;yes;yes;no;yes;no;nephritis
+O105;41.0;no;yes;yes;no;yes;nephritis
+O106;41.1;yes;yes;yes;yes;yes;bladder-inflammation and nephritis
+O107;41.1;yes;yes;yes;yes;no;bladder-inflammation and nephritis
+O108;41.1;no;no;no;no;no;none
+O109;41.1;yes;yes;no;yes;no;nephritis
+O110;41.1;no;yes;yes;no;yes;nephritis
+O111;41.2;yes;yes;yes;yes;yes;bladder-inflammation and nephritis
+O112;41.2;no;no;no;no;no;none
+O113;41.2;yes;yes;no;yes;no;nephritis
+O114;41.2;no;yes;yes;no;yes;nephritis
+O115;41.3;yes;yes;yes;yes;no;bladder-inflammation and nephritis
+O116;41.4;no;yes;yes;no;yes;nephritis
+O117;41.5;no;no;no;no;no;none
+O118;41.5;yes;yes;no;yes;no;nephritis
+O119;41.5;no;yes;yes;no;yes;nephritis
+O120;41.5;no;yes;yes;no;yes;nephritis
