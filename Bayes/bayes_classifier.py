@@ -208,7 +208,7 @@ class BayesianClassifier:
             'class_prior': self.model.class_prior_.tolist(),
             'feature_names': self.feature_columns,
             'theta': self.model.theta_.tolist(),  # Mean của mỗi feature cho mỗi class
-            'sigma': self.model.sigma_.tolist()  # Variance của mỗi feature cho mỗi class
+            'sigma': self.model.var_.tolist()  # Variance của mỗi feature cho mỗi class
         }
 
         return model_info
