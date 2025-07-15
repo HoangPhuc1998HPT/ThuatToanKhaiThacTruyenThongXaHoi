@@ -2,6 +2,7 @@
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QHBoxLayout, QWidget, QVBoxLayout, QPushButton, QLabel
 
+from Bayes.bayesian_gui import BayesianClassifierGUI
 from Frontend.ButtonUI import ButtonUI
 from Frontend.GlobalStyle import GlobalStyle
 from Rough_Set_Analysis.rough_set_analysis import ReductFinderApp
@@ -57,7 +58,7 @@ class LandlordMenu(QWidget):
 
         self.bayes = QPushButton("Phân lớp bằng Naïve Bayes")
         button_ui.apply_style(self.bayes)
-        self.bayes.clicked.connect(lambda: print("Thuajat toan Bayes"))
+        self.bayes.clicked.connect(lambda: self.set_right_frame(BayesianClassifierGUI))
 
         self.decision_tree = QPushButton("Phân lớp bằng Cây quyết định")
         button_ui.apply_style(self.decision_tree)

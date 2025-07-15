@@ -1,9 +1,7 @@
 import sys
-import pandas as pd
-import numpy as np
-from PyQt5 import QtWidgets, QtCore, QtGui
-import traceback
-from bayes_classifier import BayesianClassifier
+from PyQt5 import QtWidgets
+
+from Bayes.bayes_classifier import BayesianClassifier
 
 
 class BayesianClassifierGUI(QtWidgets.QMainWindow):
