@@ -175,27 +175,51 @@ class DecisionTreeGUI(QtWidgets.QMainWindow):
 
         main_layout.addWidget(results_splitter)
 
-        # === PREDICTION SECTION ===
+        # === PREDICTION SECTION - SỬA LẠI PHẦN NÀY ===
         pred_group = QtWidgets.QGroupBox("4. Dự đoán")
-        pred_layout = QtWidgets.QVBoxLayout(pred_group)
+        pred_group.setMaximumHeight(200)  # Giới hạn chiều cao
+        pred_main_layout = QtWidgets.QVBoxLayout(pred_group)
 
-        # Input fields for prediction (will be populated after training)
+        # Input section trong một horizontal layout
+        input_section = QtWidgets.QWidget()
+        input_layout = QtWidgets.QHBoxLayout(input_section)
+
+        # Left side - Input fields
+        input_left = QtWidgets.QWidget()
+        input_left_layout = QtWidgets.QVBoxLayout(input_left)
+        input_left_layout.addWidget(QtWidgets.QLabel("Nhập dữ liệu:"))
+
         self.pred_inputs = {}
         self.pred_scroll = QtWidgets.QScrollArea()
+        self.pred_scroll.setMaximumHeight(120)  # Giới hạn chiều cao scroll area
+        self.pred_scroll.setWidgetResizable(True)
         self.pred_widget = QtWidgets.QWidget()
         self.pred_layout = QtWidgets.QFormLayout(self.pred_widget)
         self.pred_scroll.setWidget(self.pred_widget)
-        self.pred_scroll.setMaximumHeight(100)
+
+        input_left_layout.addWidget(self.pred_scroll)
 
         pred_btn = QtWidgets.QPushButton("Dự đoán")
         pred_btn.clicked.connect(self.make_prediction)
+        input_left_layout.addWidget(pred_btn)
 
-        self.pred_result = QtWidgets.QLabel("Kết quả dự đoán sẽ hiển thị ở đây")
+        input_layout.addWidget(input_left)
 
-        pred_layout.addWidget(self.pred_scroll)
-        pred_layout.addWidget(pred_btn)
-        pred_layout.addWidget(self.pred_result)
+        # Right side - Results
+        result_right = QtWidgets.QWidget()
+        result_layout = QtWidgets.QVBoxLayout(result_right)
+        result_layout.addWidget(QtWidgets.QLabel("Kết quả dự đoán:"))
 
+        # SỬA: Sử dụng QTextEdit thay vì QLabel để hiển thị tốt hơn
+        self.pred_result = QtWidgets.QTextEdit()
+        self.pred_result.setReadOnly(True)
+        self.pred_result.setMaximumHeight(120)
+        self.pred_result.setText("Kết quả dự đoán sẽ hiển thị ở đây")
+
+        result_layout.addWidget(self.pred_result)
+        input_layout.addWidget(result_right)
+
+        pred_main_layout.addWidget(input_section)
         main_layout.addWidget(pred_group)
 
     def browse_file(self):
@@ -446,7 +470,9 @@ class DecisionTreeGUI(QtWidgets.QMainWindow):
         """Thiết lập các trường input cho dự đoán"""
         # Clear existing inputs
         for i in reversed(range(self.pred_layout.count())):
-            self.pred_layout.itemAt(i).widget().deleteLater()
+            child = self.pred_layout.itemAt(i).widget()
+            if child:
+                child.deleteLater()
 
         self.pred_inputs = {}
 
@@ -482,7 +508,13 @@ class DecisionTreeGUI(QtWidgets.QMainWindow):
                 else:
                     # Numerical feature
                     try:
-                        value = float(widget.text())
+                        text_value = widget.text().strip()
+                        if not text_value:
+                            QtWidgets.QMessageBox.warning(
+                                self, "Lỗi", f"Vui lòng nhập giá trị cho {feature}"
+                            )
+                            return
+                        value = float(text_value)
                         input_data[feature] = value
                     except ValueError:
                         QtWidgets.QMessageBox.warning(
@@ -495,16 +527,33 @@ class DecisionTreeGUI(QtWidgets.QMainWindow):
             prediction = self._model.predict(input_df)[0]
             probabilities = self._model.predict_proba(input_df)[0]
 
-            # Display result
-            result_text = f"Dự đoán: {prediction}\n\n"
+            # SỬA: Format kết quả hiển thị rõ ràng hơn
+            result_text = f"=== KẾT QUẢ DỰ ĐOÁN ===\n\n"
+            result_text += f"Dự đoán: {prediction}\n\n"
             result_text += "Xác suất cho từng lớp:\n"
-            for class_name, prob in zip(self._model.classes_, probabilities):
-                result_text += f"  {class_name}: {prob:.4f} ({prob * 100:.2f}%)\n"
+
+            # Sắp xếp theo xác suất giảm dần
+            prob_pairs = list(zip(self._model.classes_, probabilities))
+            prob_pairs.sort(key=lambda x: x[1], reverse=True)
+
+            for class_name, prob in prob_pairs:
+                result_text += f"  • {class_name}: {prob:.4f} ({prob * 100:.2f}%)\n"
+
+            # Thêm thông tin input đã nhập
+            result_text += f"\n=== DỮ LIỆU NHẬP ===\n"
+            for feature, widget in self.pred_inputs.items():
+                if isinstance(widget, QtWidgets.QComboBox):
+                    value = widget.currentText()
+                else:
+                    value = widget.text()
+                result_text += f"  • {feature}: {value}\n"
 
             self.pred_result.setText(result_text)
 
         except Exception as e:
             QtWidgets.QMessageBox.critical(self, "Lỗi", f"Lỗi dự đoán: {str(e)}")
+            # Clear result on error
+            self.pred_result.setText("Có lỗi xảy ra trong quá trình dự đoán")
 
 
 class PlotCanvas(FigureCanvas):
