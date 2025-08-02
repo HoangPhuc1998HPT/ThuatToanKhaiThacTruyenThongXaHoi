@@ -25,7 +25,7 @@ class GlobalStyle:
     LABEL_FONT_SIZE = "16px"
 
     # Window size
-    WINDOW_WIDTH = 1600
+    WINDOW_WIDTH = 1650
     WINDOW_HEIGHT = 900
     # Thêm các hằng số cho responsive design
     SMALL_SCREEN_WIDTH = 800

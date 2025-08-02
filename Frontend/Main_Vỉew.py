@@ -3,6 +3,7 @@ from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QHBoxLayout, QWidget, QVBoxLayout, QPushButton, QLabel
 
 from Bayes.bayesian_gui import BayesianClassifierGUI
+from Decision_Tree.decision_tree_ver_2 import ID3AnalyzerGUI
 from Frontend.ButtonUI import ButtonUI
 from Frontend.GlobalStyle import GlobalStyle
 from Rough_Set_Analysis.rough_set_analysis import ReductFinderApp
@@ -28,7 +29,7 @@ class LandlordMenu(QWidget):
 
         # ------------ LEFT MENU FRAME ------------
         self.left_frame = QWidget()
-        self.left_frame.setFixedWidth(250)
+        self.left_frame.setFixedWidth(300)  # Đặt chiều rộng cố định cho menu bên trái
         self.left_frame.setStyleSheet("""
             background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 #FF6B6B, stop:1 #FFA07A);
             border-radius: 15px;
@@ -48,7 +49,7 @@ class LandlordMenu(QWidget):
         button_ui.apply_style(self.introduction)
         self.introduction.clicked.connect(lambda: print("Ở đây giới thiệu về ứng dụng và báo cáo"))
 
-        self.frequent = QPushButton("TTapajj phổ biến và luật kết hợp")
+        self.frequent = QPushButton("Tập phổ biến và luật kết hợp")
         button_ui.apply_style(self.frequent)
         self.frequent.clicked.connect(lambda: self.set_right_frame(FrequentSetGUI))
 
@@ -62,7 +63,7 @@ class LandlordMenu(QWidget):
 
         self.decision_tree = QPushButton("Phân lớp bằng Cây quyết định")
         button_ui.apply_style(self.decision_tree)
-        self.decision_tree.clicked.connect(lambda : print("3"))
+        self.decision_tree.clicked.connect(lambda : self.set_right_frame(ID3AnalyzerGUI))
 
         self.clustering = QPushButton("Gom cụm - Clustering")
         button_ui.apply_style(self.clustering)
